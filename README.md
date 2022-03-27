@@ -4,7 +4,10 @@
 
 目前此项目处于设计和信息收集阶段，欢迎有兴趣的人加入，微信加`Blue_L`入群。
 
-项目的整体设计文档[参考这里](docs/design.md)。
+- [整体设计](docs/design.md)。
+- 组件文档
+  - [hdfs设计](docs/hdfs.md)
+- [平台设计](docs/platform.md)
 
 ## 项目介绍
 
