@@ -31,20 +31,22 @@ kubebdp是一个基于kubernetes的大数据管理平台。
 计划支持常用的大数据服务组件：
 
 - kerberos
-- zookeeper
 - ldap
-- hadoop
+- zookeeper
+- hdfs
 - hive
-- impala
 - hbase
 - spark
 - flink
+- presto
+- impala
 - kafka
 - elasticsearch
 
 通用服务组件
 
-- mysql/tidb
+- mysql
+- tidb
 - redis
 - juicefs
 - minio
@@ -61,6 +63,7 @@ kubebdp是一个基于kubernetes的大数据管理平台。
 - metallb
 - external-dns
 - ceph
+- openebs
 - minio
 - juicefs
 
