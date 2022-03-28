@@ -2,7 +2,7 @@
 
 kubebdp主要有两部分构成。第一个是集群管理控制器，负责对集群的部署、更配，释放等管理；第二个是各个服务组件的控制器，负责自身组件的部署管理，更配和释放等管理。
 
-![alt 控制器](images/controller.png)
+![alt 控制器](https://fyp666.oss-cn-beijing.aliyuncs.com/img/controller.png)
 
 ## 集群控制器
 
