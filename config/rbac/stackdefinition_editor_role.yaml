@@ -1,0 +1,31 @@
+# permissions for end users to edit stackdefinitions.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: stackdefinition-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: kubebdp
+    app.kubernetes.io/part-of: kubebdp
+    app.kubernetes.io/managed-by: kustomize
+  name: stackdefinition-editor-role
+rules:
+- apiGroups:
+  - kubebdp.github.io
+  resources:
+  - stackdefinitions
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - kubebdp.github.io
+  resources:
+  - stackdefinitions/status
+  verbs:
+  - get

@@ -1,0 +1,12 @@
+apiVersion: kubebdp.github.io/v1alpha1
+kind: StackDefinition
+metadata:
+  labels:
+    app.kubernetes.io/name: stackdefinition
+    app.kubernetes.io/instance: stackdefinition-sample
+    app.kubernetes.io/part-of: kubebdp
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: kubebdp
+  name: stackdefinition-sample
+spec:
+  # TODO(user): Add fields here

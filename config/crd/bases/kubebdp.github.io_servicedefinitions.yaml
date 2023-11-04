@@ -1,0 +1,140 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.10.0
+  creationTimestamp: null
+  name: servicedefinitions.kubebdp.github.io
+spec:
+  group: kubebdp.github.io
+  names:
+    kind: ServiceDefinition
+    listKind: ServiceDefinitionList
+    plural: servicedefinitions
+    singular: servicedefinition
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ServiceDefinition is the Schema for the ServiceDefinitions API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ServiceDefinitionSpec defines the desired state of ServiceDefinition
+            properties:
+              configurations:
+                items:
+                  properties:
+                    conditionalDependencies:
+                      items:
+                        properties:
+                          conditions:
+                            items:
+                              properties:
+                                key:
+                                  enum:
+                                  - Type
+                                  - TypeName
+                                  type: string
+                                operator:
+                                  type: string
+                                values:
+                                  items:
+                                    type: string
+                                  type: array
+                              required:
+                              - key
+                              - operator
+                              - values
+                              type: object
+                            type: array
+                          name:
+                            type: string
+                          type:
+                            type: string
+                        required:
+                        - conditions
+                        - name
+                        - type
+                        type: object
+                      type: array
+                    definitions:
+                      items:
+                        properties:
+                          description:
+                            type: string
+                          name:
+                            type: string
+                          type:
+                            type: string
+                          value:
+                            type: string
+                        required:
+                        - description
+                        - name
+                        - type
+                        - value
+                        type: object
+                      type: array
+                    dependencies:
+                      items:
+                        properties:
+                          name:
+                            type: string
+                          type:
+                            type: string
+                        required:
+                        - name
+                        - type
+                        type: object
+                      type: array
+                    format:
+                      type: string
+                    type:
+                      type: string
+                  required:
+                  - conditionalDependencies
+                  - definitions
+                  - dependencies
+                  - format
+                  - type
+                  type: object
+                type: array
+              recommendation:
+                properties:
+                  python:
+                    type: string
+                required:
+                - python
+                type: object
+              service:
+                type: string
+              version:
+                type: string
+            required:
+            - configurations
+            - recommendation
+            - service
+            - version
+            type: object
+          status:
+            description: ServiceDefinitionStatus defines the observed state of ServiceDefinition
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

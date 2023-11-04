@@ -1,0 +1,12 @@
+apiVersion: kubebdp.github.io/v1alpha1
+kind: Zookeeper
+metadata:
+  labels:
+    app.kubernetes.io/name: zookeeper
+    app.kubernetes.io/instance: zookeeper-sample
+    app.kubernetes.io/part-of: kubebdp
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: kubebdp
+  name: zookeeper-sample
+spec:
+  # TODO(user): Add fields here

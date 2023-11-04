@@ -1,0 +1,12 @@
+apiVersion: kubebdp.github.io/v1alpha1
+kind: Cluster
+metadata:
+  labels:
+    app.kubernetes.io/name: cluster
+    app.kubernetes.io/instance: cluster-sample
+    app.kubernetes.io/part-of: kubebdp
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: kubebdp
+  name: cluster-sample
+spec:
+  # TODO(user): Add fields here
